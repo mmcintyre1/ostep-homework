@@ -138,3 +138,11 @@ The waitpid() function is provided for three reasons:
   1. To support job control
   2. To permit a non-blocking version of the wait() function
   3. To permit a library routine, such as system() or pclose(), to wait for its children without interfering with other terminated children for which the process has not waited
+
+7. Write a program that creates a child process, and then in the child closes standard output (`STDOUT_FILENO`). What happens if the child calls `printf()` to print some output after closing the descriptor?
+
+No output is emitted to the terminal. According to the [print man page](https://man7.org/linux/man-pages/man3/printf.3.html), printf prints to stdout, so it has nowhere else to go.
+
+8. Write a program that creates two children, and connects the standard output of one to the standard input of the other, using the `pipe()` system call.
+
+I'm not really sure what's going on with pipe here. Seems like you need to call it before you fork (of course!). Let me see if I can talk through what I see in p8. Might be a good chance to run a debugger and check the values in pipefd before and after pipe() is called, and see if these correspond to process ids (pid).
