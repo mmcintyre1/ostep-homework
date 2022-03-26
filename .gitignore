@@ -10,3 +10,6 @@
 *.out
 *Zone.Identifier
 *tests-out
+
+# vscode files
+.vscode
