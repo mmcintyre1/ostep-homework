@@ -1,2 +1,12 @@
+# compiled c in projects
+# excludes all files with no extension
+# and needs to come first in gitignore or everything previous to it will be
+# essentially overwritten
+*
+!/**/
+!*.*
+
 # compiled c
 *.out
+*Zone.Identifier
+*tests-out
