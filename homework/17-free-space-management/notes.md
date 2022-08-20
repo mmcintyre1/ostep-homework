@@ -21,7 +21,7 @@ typedef struct {
 
 - a free list is created within the free space itself
 
-[free-space.png](free-space.png)
+![free-space.png](free-space.png)
 
 - if you need to grow the heap, one option is to just fail and return NULL
 - most traditional allocators start with a small heap and grow via `sbrk` in most UNIX systems
@@ -48,7 +48,7 @@ typedef struct {
 - searches through free space are more uniform
 - similar performance to first fit
 
-[example-memory.png](example-memory.png)
+![example-memory.png](example-memory.png)
 
 if searching for 15 bytes
 - best fit picks 20
@@ -67,7 +67,7 @@ if searching for 15 bytes
 - memory is one big space, and when memory is requested, space is divided by two until a suitable block is found
 - key is that when memory is freed, allocator will check its buddies to see if it can be coalesced all the way up the tree
 
-[buddy-heap.png](buddy-heap.png)
+![buddy-heap.png](buddy-heap.png)
 
 - most of these approaches have difficulty scaling, as searching can be quite slow
 - glibc allocator is an example of a C allocator in real use

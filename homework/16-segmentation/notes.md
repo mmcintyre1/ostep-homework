@@ -11,14 +11,14 @@ two approaches for hardware to determine which segment an address is in
     - chop up address space into segments based on top few bits of virtual address
     - first two bits are segment, remaining are offset into segment
     - using two bits leaves one segment unused (00, 01, 10, 11 <- unused), so some systems put code in same section as heap and only use one bit to select
-    [offset.png](offset.png)
+    ![offset.png](offset.png)
 2. **implicit**
     - hardware determines how the address was formed, e.g., addresses from program counter (instruction fetch) then address is within code segment
 
 - hardware also needs to know which way segment grows to accommodate stack in addition to base and bounds registers
 - to save memory, sometimes its useful to share memory segments between address spaces
   - need protection bits to to indicate read or write permissions
-[registers.png](registers.png)
+![registers.png](registers.png)
 
 **fine-grained segementation** - many smaller segments, but requires a segment table as a map
 **course-grained segmentation** - only a few segments, i.e., code, stack, heap
