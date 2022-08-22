@@ -204,9 +204,10 @@ class OS:
 
     def memoryDump(self):
         for i in range(0, int(self.physMem / self.pageSize)):
-            print('page %3d:' % i, end='')
+            print('page %3d: ' % i, end='')
             for j in range(0, self.pageSize):
-                print('%02x' % self.memory[(i * self.pageSize) + j], end='')
+                print('%s:%02x ' %
+                      (j, self.memory[(i * self.pageSize) + j]), end='')
             print('')
 
     def getPDBR(self, pid):

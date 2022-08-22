@@ -12,14 +12,20 @@
     virtual address space = 32 kb -> 15, VPN = 10 (15 - 10)
     128 pages, offset 5, PFN 7 (2**7 = 128)
 
-    Virtual Address 611c: Translates To What Physical Address (And Fetches what Value)? Or Fault? 01100 00100011100
-    Virtual Address 3da8: Translates To What Physical Address (And Fetches what Value)? Or Fault?
-    Virtual Address 17f5: Translates To What Physical Address (And Fetches what Value)? Or Fault?
-    Virtual Address 7f6c: Translates To What Physical Address (And Fetches what Value)? Or Fault?
-    Virtual Address 0bad: Translates To What Physical Address (And Fetches what Value)? Or Fault?
-    Virtual Address 6d60: Translates To What Physical Address (And Fetches what Value)? Or Fault?
-    Virtual Address 2a5b: Translates To What Physical Address (And Fetches what Value)? Or Fault?
-    Virtual Address 4c5e: Translates To What Physical Address (And Fetches what Value)? Or Fault?
-    Virtual Address 2592: Translates To What Physical Address (And Fetches what Value)? Or Fault?
-    Virtual Address 3e99: Translates To What Physical Address (And Fetches what Value)? Or Fault?
+    611c
+    011000 (pde index) 01000 (pt index) 11100 (offset)
+    Start at page table 108 - index at 011000 (24) = 0xa1
+    0xa1 in binary = 10100001. first bit is 1, so valid, remaining 0100001 (33)
+    go to page 33, look at index 01000 (8) = 0xb5
+    0xb5 in binary = 10110101. first bit is 1, so valid, remaining 0110101 (53)
+    concat 0110101 and offset 11100 = 011010111100 = 0x6bc
+
+    3da8
+    001111 01101 01000
+    page 108, index at 001111 (15) = d6 (11010110)
+    1 - valid, 1010110 (86)
+    page 86, index at 01101 (13) = 7f (01111111)
+    0 - invalid 1111111
+    FAULT
+
 3. Given your understanding of how cache memory works, how do you think memory references to the page table will behave in the cache? Will they lead to lots of cache hits (and thus fast accesses?) Or lots of misses (and thus slow accesses)?
