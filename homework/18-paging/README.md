@@ -18,7 +18,7 @@
   - 20 bit VPN implies 2^20 translations, and at 4 bytes per PTE that is 4MB for each page table, and if there are 100 processes, thats 400MB
 - they can get much larger than a small segment table or base/bounds pair
 - simplest form is a **linear page table**, which is just an array
-  - OS indexes array by virtual page number and look sup the page-table entry at that index to find the physical frame number
+  - OS indexes array by virtual page number and looks up the page-table entry at that index to find the physical frame number
 - many different bits to to dictate behavior:
   - **valid bit** - common to indicate whether the particular translation is valid
   - **protection bit** - can the page be read from, written to, or executed from

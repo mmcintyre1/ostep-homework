@@ -4,7 +4,7 @@ import numpy as np
 import subprocess
 
 POWER = 14
-TRIALS = 10000
+TRIALS = 100000
 
 data = []
 
