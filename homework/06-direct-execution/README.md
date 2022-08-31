@@ -3,6 +3,8 @@
     1. _performance_ - how to implement virtualization without excessive overhead
     2. _control_ - how can run processes while retaining control over CPU
 
+**scheduler** - part of the OS that decides what processes run on the CPU and when
+
 **limited direct execution** - run a program directly on the CPU, with limits on how long a process can run on the CPU
 
 ![limited direct execution](lde.png)
@@ -34,3 +36,4 @@ when the OS wants to start a program, it
 - **non-cooperative** - OS implements a mechanism like a _timer interrupt_ to take back control of CPU
 
 **context switch** - low-level technique to switch from one running process to another
+**lmbench** - useful to for measuring how long things take on linux
