@@ -1,6 +1,6 @@
 ## Homework (Simulation)
 
-[GitHub README on fork.py](https://github.com/remzi-arpacidusseau/ostep-homework/blob/master/cpu-api/README-fork.md)
+[README on fork.py](https://github.com/remzi-arpacidusseau/ostep-homework/blob/master/cpu-api/README-fork.md)
 
 1. Run `./fork.py -s 10` and see which actions are taken. Can you predict what the process tree looks like at each step? Use the `-c` flag to check your answers. Try some different random seeds (`-s`) or add more actions (`-a`) to get the hang of it.
 
