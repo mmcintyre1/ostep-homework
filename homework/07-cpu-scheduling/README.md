@@ -34,7 +34,6 @@
 ## Shortest Time-to-Completion First (STCF)
 - adds preemption to shortest job first scheduling
 - any time a new job enters the system, the scheduler determines which job has least time left and schedules that one
--
 
 ## Round Robin
 - aka _time slicing_
