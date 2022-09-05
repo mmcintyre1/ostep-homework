@@ -29,5 +29,3 @@ two approaches for hardware to determine which segment an address is in
 - **compaction** is expensive and copying segments is memory-intensive and uses a fair amount of processor time
 - **free list management algorithm** - keep large extents of memory available for allocation
 - other algorithms like best-fit, worst-fit, first-fit, buddy algorithm
-
--
